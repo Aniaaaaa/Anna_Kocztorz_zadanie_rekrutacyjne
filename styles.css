@@ -1,0 +1,117 @@
+/* Anna Kocztorz
+ * studentka 3 roku Informatyki na Politechnice Śląskiej na wydziale Automatyki, Elektroniki i Informatyki
+ * projekt zrealizowany na potrzeby rekrutacji na staż w firmie XSolve
+ * data ukończenia: 11.04.2017r
+ */
+
+/*STYLES for table with data*/
+table, th, td{
+    margin: 5px;
+    border: 1px;
+    border-style: solid;
+}
+
+table {
+    width: 90%;
+    margin-top: 100px;
+    color: white;
+    min-width: 500px;
+}
+       
+th, td{
+    text-align: center;
+    height: 55px;
+}
+
+.id {
+    text-align: center;
+    width: 5%;
+}
+
+.lastName, .firstName, .birthday, .function {
+    text-align: center;
+    width: 20%;
+}
+
+.experience {
+    text-align: center;
+    width: 15%;
+}
+
+.id, .lastName, .firstName, .birthday, .function, .experience {
+    background-color: antiquewhite;/* rgb(266,163,70);*/
+    color:brown;
+}
+
+
+/*STYLES for sidemenu*/
+.sidePanel {
+    background-color: burlywood;
+    position:fixed;
+    width: 20%;
+    max-width: 250px;
+    padding: 20px;
+    margin-left: -15px;
+    height: 100%;
+   /* max-width:250px;*/
+    min-width: 200px;
+    overflow: auto;
+}
+/*STYLES for main page*/
+.mainPage {
+    position: fixed;
+   /* background-color: gray; */
+   background-color: rgb(37, 33, 34);
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    margin-left: 185px;
+    margin-right: -50px;
+    padding-left: 16px;
+    height: 100%;
+    width: 90%;
+    min-width: 1000px;
+    overflow: auto;
+}
+
+@media (min-width: 1250px) {
+  .mainPage {
+    margin-left:235px;
+  }
+}
+
+.menuButton {
+    border-radius: 4px;
+    border: none;
+    min-width: 150px;
+    padding: 8px;
+    margin: 5px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(37, 33, 34);
+    margin-left: 10%;
+}
+input, select {
+    border: none;
+    border-radius:4px;
+}
+
+.information {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    padding: 40px;
+}
+
+.page {
+    border: 2px;
+    border-radius: 4px;
+    border-style:solid;
+    border-color: brown;
+    color: brown;
+    background-color: antiquewhite;
+    font-size: 15px;
+    font-weight: bold; 
+    padding: 20px;
+    margin: 10px;
+}

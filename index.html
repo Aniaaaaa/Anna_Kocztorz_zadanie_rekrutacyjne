@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Anna Kocztorz
+  studentka 3 roku Informatyki na Politechnice Śląskiej na wydziale Automatyki, Elektroniki i Informatyki
+  projekt zrealizowany na potrzeby rekrutacji na staż w firmie XSolve
+  data ukończenia: 11.04.2017r -->
+<html>
+    <head>
+        <title>Beauty&Beast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><table border="1" width="100">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="sluzba.json"></script>
+        <script type="text/javascript" src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="sidePanel">
+                <div ng-app="Beauty&BeastApp" ng-controller="myCtrl">
+                    <form>
+                    <div> 
+                        <p><label> SORT OPTIONS: </label></p>
+                        <select ng-model="sortOptionsModel" ng-options="x.description for x in options"></select>
+                        <button class="menuButton" type="submit" ng-click="changeSortOption()" >SORT</button>
+                    </div>
+                    </form>
+                    <div style="padding-top: 20px"> 
+                        <form>
+                            <div><label> FILTER OPTIONS: </label></div>
+                            <div>
+                                <p><label><input type="checkbox" ng-model="checkboxModel.noneValue" binary="true" ng-click="checkboxesUnchecked()">NONE </label></p>
+                            </div>
+                            <div>
+                                <p><label><input type="checkbox" ng-model="checkboxModel.idValue" binary="true" ng-click="checkboxesUnchecked()">By Id </label></p>
+                                <p>Please enter here Id: <input type="text" ng-model="filterIdInput"></p>
+                            </div>
+                            <div>
+                                <p><label><input type="checkbox" data-ng-model="checkboxModel.firstNameValue" ng-click="checkboxesUnchecked()">By First Name </label></p>
+                                <p>Please enter here First Name: <input type="text" ng-model="filterFirstNameInput"></p>
+                            </div>
+                            <div>
+                                <p><label><input type="checkbox" data-ng-model="checkboxModel.lastNameValue" ng-click="checkboxesUnchecked()"> By Last Name </label></P>
+                                <p>Please enter here Last Name: <input type="text" ng-model="filterLastNameInput"></p>
+                            </div>
+                            <div>
+                                <p><label><input type="checkbox" data-ng-model="checkboxModel.birthdayValue" ng-click="checkboxesUnchecked()"> By Year of Birth </label></p>
+                                <p>Please enter here Date: <select ng-model="filterBirthdayInput" ng-options="y for y in Range(1930, 2017)"></select><!--<input type="text" ng-model="filterBirthdayInput">--></p> 
+                            </div>
+                            <div>
+                                <p><label><input type="checkbox" data-ng-model="checkboxModel.functionValue" ng-click="checkboxesUnchecked()"> By Function </label></p>
+                                <p>Please enter here Function: <input type="text" ng-model="filterFunctionInput"></p>
+                            </div>
+                            <div>
+                                <p><label><input type="checkbox" data-ng-model="checkboxModel.experienceValue" ng-click="checkboxesUnchecked()"> By Experience </label></p>
+                                <p>Please enter here Experience: <input type="text" ng-model="filterExperienceInput"></p>
+                            </div>                                
+                            <button class="menuButton" type="submit" ng-click="filtrData()" >FILTER</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mainPage">
+                <div id="table"></div>
+
+                <div id="buttons"></div>
+
+            </div>
+            
+        </div>
+    </body>
+</html>
